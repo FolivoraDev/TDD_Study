@@ -1,10 +1,11 @@
-from selenium import webdriver
 import unittest
+
+from selenium import webdriver
 
 
 class NewVisitorTest(unittest.TestCase):
     def setUp(self):
-        self.browser = webdriver.firefox()
+        self.browser = webdriver.Firefox()
         self.browser.implicitly_wait(3)
 
     def tearDown(self):
