@@ -1,8 +1,17 @@
 from django.test import TestCase
 
-
 # Create your tests here.
-class SampleTest(TestCase):
+from django.urls import resolve
 
-    def test_bad_maths(self):
-        self.assertEqual(1 + 1, 3)
+# class SampleTest(TestCase):
+#
+#     def test_bad_maths(self):
+#         self.assertEqual(1 + 1, 3)
+from lists.views import home_page
+
+
+class HomePageTest(TestCase):
+
+    def test_root_url_resolves_to_home_page_view(self):
+        found = resolve('/')
+        self.assertEqual(found.func, home_page)
